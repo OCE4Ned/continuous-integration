@@ -25,3 +25,19 @@ jobs:
 
       - name: Build Project
         run: npm run build
+
+      - name : Upload production build artifacts
+        uses : actions/upload-artifact@v3
+        with:
+          name: production-build
+          path:
+            dist/
+
+
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          email: username@domain.tld
+          build_dir: _site
