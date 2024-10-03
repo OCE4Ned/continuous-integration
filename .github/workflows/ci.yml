@@ -39,5 +39,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          email: username@domain.tld
+          email: mel.delescluse@gmail.com
           build_dir: dist
