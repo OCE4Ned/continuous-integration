@@ -35,9 +35,7 @@ jobs:
 
 
       - name: Deploy to GitHub Pages
-        uses: Cecilapp/GitHub-Pages-deploy@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          email: mel.delescluse@gmail.com
-          build_dir: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
